@@ -1,0 +1,267 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin: 0; 
+    background-color: #092b30;
+}
+
+
+.cover__img{
+    display: flex; 
+    background-image: url(/src/assets/portada.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px; 
+    background-size: 100% 100% ;
+    position:relative
+}
+
+@media ( max-width:380px) {
+  .cover__img{
+      display: flex;
+      width: 100%;
+      height: 450px;
+      background-image: url(/src/assets/img3.webp);
+      background-repeat: no-repeat;
+      background-size: 100% 100%
+  }
+}
+
+
+.container__F{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.btn__center{
+  padding-top: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.input{
+  outline: none;
+  display: flex;
+    width: 300px;
+    height: 30px;
+    border-radius: 2rem;
+    cursor: pointer;
+    background-color:gray;
+}
+
+.btn{
+  background-color:  #6bb300;
+  
+  border-radius:8px;
+  display: block;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: 150ms filter ease-in-out;
+}
+
+.btn:hover{
+  filter:brightness(1.2)
+}
+
+.container__suggestion{
+  max-height: 280px;
+	opacity: 0;
+	pointer-events: none;
+	padding: 0;
+	overflow-y: auto;
+}
+
+.input.active .container__suggestion{
+  opacity: 1;
+	pointer-events: auto;
+	padding: 10px 8px;
+}
+
+.input.active .container__suggestion li{
+  display: block;
+}
+
+.container__suggestion li{
+  list-style: none;
+	width: 100%;
+	padding: 8px 12px;
+	border-radius: 5px;
+	display: none;
+}
+
+.container__suggestion li:hover{
+  background-color: #414b57;
+}
+
+.location__info{
+  display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+ul{
+  list-style: none;
+  
+}
+
+li{
+  margin: 10px;
+}
+/* .list__info{
+  margin: 10px;
+} */
+
+.location-residents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.resident-card {
+    background-color: #062226;
+    color: aliceblue
+}
+
+.resident-card_header {
+    position: relative
+}
+
+.resident-card__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resident-card_status {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border-end-end-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #082c31;
+    
+}
+
+.circle {
+    width: 7px;
+    aspect-ratio: 1;
+    border-radius: 50px;
+}
+
+.circle.Alive {
+    background-color: green;
+}
+
+.circle.Dead {
+    background-color: red;
+}
+
+.circle.unknown {
+    background-color: gray;
+}
+
+.resident-card_body {
+    padding: 15px;
+}
+
+.resident-card_body>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resident-card_body>ul>li {
+    display: flex;
+    flex-direction: column;
+    color: gray;
+}
+
+.Error-Message {
+    width: max-content;
+    background-color: red;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    right: -100;
+    animation: 0.3s ease-in forwards showError;
+}
+
+.Error-Message p {
+    margin: 0;
+}
+
+@keyframes showError {
+    0% {
+        right: -100%;
+    }
+
+    50% {
+        right: -50%
+    }
+
+    100% {
+        right: 10px;
+    }
+
+}
+
+
+.list-pages {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.list-pages li {
+    background-color: #6bb300;
+    color: azure;
+    width: 35px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.list-pages li.currentPage {
+    background-color: #b3b300;
+}
+
+
+.list-pages li:hover {
+    background-color: #b3b300;
+}
