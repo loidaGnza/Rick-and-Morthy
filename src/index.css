@@ -61,7 +61,7 @@ body {
     height: 30px;
     border-radius: 2rem;
     cursor: pointer;
-    background-color:gray;
+    background-color:rgb(244, 252, 244);
 }
 
 .btn{
